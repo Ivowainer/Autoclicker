@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace Autoclicker
 {
     public partial class mainForm : Form
@@ -15,10 +17,8 @@ namespace Autoclicker
         private void InitializeComponent()
         {
             SuspendLayout();
-            // 
-            // mainForm
-            // 
             ClientSize = new Size(631, 384);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "mainForm";
             Text = "Autoclicker";
             Load += Form1_Load_1;
@@ -27,7 +27,6 @@ namespace Autoclicker
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            Console.WriteLine("asfawf");
         }
     }
 }
