@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ivanc\\Documents\\Github\\Autoclicker\\Autoclicker\\Autoclicker.csproj": {}
+    "E:\\Projects .NET\\AutoClicker\\Autoclicker\\Autoclicker\\Autoclicker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ivanc\\Documents\\Github\\Autoclicker\\Autoclicker\\Autoclicker.csproj": {
+    "E:\\Projects .NET\\AutoClicker\\Autoclicker\\Autoclicker\\Autoclicker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ivanc\\Documents\\Github\\Autoclicker\\Autoclicker\\Autoclicker.csproj",
+        "projectUniqueName": "E:\\Projects .NET\\AutoClicker\\Autoclicker\\Autoclicker\\Autoclicker.csproj",
         "projectName": "Autoclicker",
-        "projectPath": "C:\\Users\\ivanc\\Documents\\Github\\Autoclicker\\Autoclicker\\Autoclicker.csproj",
-        "packagesPath": "C:\\Users\\ivanc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ivanc\\Documents\\Github\\Autoclicker\\Autoclicker\\obj\\",
+        "projectPath": "E:\\Projects .NET\\AutoClicker\\Autoclicker\\Autoclicker\\Autoclicker.csproj",
+        "packagesPath": "C:\\Users\\MicropeneFurioso77\\.nuget\\packages\\",
+        "outputPath": "E:\\Projects .NET\\AutoClicker\\Autoclicker\\Autoclicker\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ivanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MicropeneFurioso77\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\ivanc\\Documents\\Github\\Play\\packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -35,6 +38,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -59,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

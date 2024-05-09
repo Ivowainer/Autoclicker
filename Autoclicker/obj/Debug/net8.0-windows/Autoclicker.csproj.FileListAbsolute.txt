@@ -31,3 +31,20 @@ C:\Users\ivanc\Documents\Github\Autoclicker\Autoclicker\obj\Debug\net8.0-windows
 C:\Users\ivanc\Documents\Github\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.pdb
 C:\Users\ivanc\Documents\Github\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.genruntimeconfig.cache
 C:\Users\ivanc\Documents\Github\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\ref\Autoclicker.dll
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\bin\Debug\net8.0-windows\Autoclicker.exe
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\bin\Debug\net8.0-windows\Autoclicker.deps.json
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\bin\Debug\net8.0-windows\Autoclicker.runtimeconfig.json
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\bin\Debug\net8.0-windows\Autoclicker.dll
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\bin\Debug\net8.0-windows\Autoclicker.pdb
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.mainForm.resources
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.csproj.GenerateResource.cache
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.AssemblyInfoInputs.cache
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.AssemblyInfo.cs
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.csproj.CoreCompileInputs.cache
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.sourcelink.json
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.dll
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\refint\Autoclicker.dll
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.pdb
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.genruntimeconfig.cache
+E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\ref\Autoclicker.dll

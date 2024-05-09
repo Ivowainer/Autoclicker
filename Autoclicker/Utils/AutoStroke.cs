@@ -1,6 +1,6 @@
 ﻿namespace Autoclicker.Utils
 {
-    public class AutoStroke
+    public class AutoStroke // AutoStroke class: Configures Key to simulate a key stroke
     {
 
         private readonly string k;
@@ -9,10 +9,9 @@
             this.k = k;
         }
 
-        public void keyStroke()
+        public async void keyStroke() // Executes keystroke action
         {
-                Thread.Sleep(3000);
-                SendKeys.SendWait(k);
+                SendKeys.Send(k);
 
                 Console.WriteLine(k);
         }

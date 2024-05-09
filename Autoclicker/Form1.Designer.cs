@@ -11,5 +11,10 @@
             }
             base.Dispose(disposing);
         }
+
+        private Button startButton;
+        private Button stopButton;
+        private TextBox hotkeyChange;
+        private Button changeHotkeyButton;
     }
 }
