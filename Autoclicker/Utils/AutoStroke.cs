@@ -9,11 +9,13 @@
             this.k = k;
         }
 
-        public async void keyStroke() // Executes keystroke action
+        public async void KeyStroke() // Executes keystroke action
         {
-                SendKeys.Send(k);
+            SendKeys.Send(k);
 
-                Console.WriteLine(k);
+            await Task.Delay(2000);
+
+            Console.WriteLine(k);
         }
     }
 }

@@ -5,32 +5,39 @@ namespace Autoclicker.Utils
 
     public class HotkeyConfig
     {
-        // <summary>
-        // Importamos el método RegisterHotKey
-        // de user32.dll, que permite establecer 
-        // una hotkey en la app
-        // </sumarry>
 
         [DllImport("user32.dll")]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc); 
 
-        private char explicitHotkey;
+        private IntPtr hWnd;
 
         // TODO: DEFAULT EMERGENCY HOTKEY (override)
 
-        public HotkeyConfig(IntPtr hWnd, char explicitHotkey) // Metodo para Hotkey configurada por el USUARIO
+        public HotkeyConfig(IntPtr hWnd) // Constructor para Hotkey configurada por el USUARIO 
         {
-            this.explicitHotkey = explicitHotkey;
+            this.hWnd = hWnd;
+        }
 
-            bool rRegistered = RegisterHotKey(hWnd, 1, 0x0000, (int)explicitHotkey);
+        public void RegisterByUser(char explicitHotkey) // Metodo que settea la Hotkey
+        {
+            char explicitHotkeyUpper = explicitHotkey.ToString().ToUpper()[0];
+            bool rRegistered = RegisterHotKey(hWnd, 1, 0x0000, (explicitHotkeyUpper)); 
 
             if (rRegistered)
-            {
                 Console.WriteLine($"Hotkey {explicitHotkey} fue registrado exitosamente");
-            }
             else
-            {
                 Console.WriteLine($"No se pudo registrar el hotkey {explicitHotkey}");
+        }
+
+        public void HandleHotKey(ref Message m)
+        {
+            if (m.Msg == 0x0312)
+            {
+                int id = m.WParam.ToInt32();
+                if (id == 1)
+                {
+                    Console.WriteLine("La tecla r fue presionada");
+                }
             }
         }
     }

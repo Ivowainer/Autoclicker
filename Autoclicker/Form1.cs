@@ -1,48 +1,52 @@
 using Autoclicker.Utils;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 using System.Windows.Forms;
 
 namespace Autoclicker
 {
     public partial class mainForm : Form
     {
+        [DllImport("user32.dll")]
+        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
 
+        private readonly HotkeyConfig hotkeyConfig;
         public mainForm()
         {
             InitializeComponent();
+
+            this.hotkeyConfig = new HotkeyConfig(this.Handle);
+            this.hotkeyConfig.RegisterByUser('S');
         }
 
-        protected override void WndProc(ref Message m)
+        protected override void WndProc(ref Message m) // Metodo interno del sistema que escucha por la Hotkey  NO TOCAR!!!!
         {
-            Console.WriteLine($"La tecla fue presionada");
-            // Captura cuando se presiona el hotkey
+            // Metodo para escuchar hotkey
             if (m.Msg == 0x0312)
             {
                 int id = m.WParam.ToInt32();
                 if (id == 1)
                 {
+                    Console.WriteLine("La tecla r fue presionada");
                 }
             }
-
             base.WndProc(ref m);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void InitializeComponent()
         {
             startButton = new Button();
             stopButton = new Button();
-            hotkeyChange = new TextBox();
             changeHotkeyButton = new Button();
             SuspendLayout();
             // 
             // startButton
             // 
-            startButton.Location = new Point(391, 152);
+            startButton.Location = new Point(620, 321);
             startButton.Name = "startButton";
             startButton.Size = new Size(190, 73);
             startButton.TabIndex = 0;
@@ -52,25 +56,16 @@ namespace Autoclicker
             // 
             // stopButton
             // 
-            stopButton.Location = new Point(391, 305);
+            stopButton.Location = new Point(205, 370);
             stopButton.Name = "stopButton";
             stopButton.Size = new Size(190, 73);
             stopButton.TabIndex = 1;
             stopButton.Text = "Stop";
             stopButton.UseVisualStyleBackColor = true;
             // 
-            // hotkeyChange
-            // 
-            hotkeyChange.Location = new Point(21, 224);
-            hotkeyChange.MaxLength = 1;
-            hotkeyChange.Name = "hotkeyChange";
-            hotkeyChange.PlaceholderText = "Hotkey";
-            hotkeyChange.Size = new Size(100, 23);
-            hotkeyChange.TabIndex = 2;
-            // 
             // changeHotkeyButton
             // 
-            changeHotkeyButton.Location = new Point(21, 253);
+            changeHotkeyButton.Location = new Point(350, 205);
             changeHotkeyButton.Name = "changeHotkeyButton";
             changeHotkeyButton.Size = new Size(100, 25);
             changeHotkeyButton.TabIndex = 3;
@@ -82,7 +77,6 @@ namespace Autoclicker
             // 
             ClientSize = new Size(960, 529);
             Controls.Add(changeHotkeyButton);
-            Controls.Add(hotkeyChange);
             Controls.Add(stopButton);
             Controls.Add(startButton);
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -90,7 +84,6 @@ namespace Autoclicker
             Text = "Autoclicker";
             Load += Form1_Load_1;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -105,15 +98,9 @@ namespace Autoclicker
         private async void startButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("1");
-            await Task.Delay(5000);
+            AutoStroke test = new AutoStroke('r'.ToString());
 
-
-            //int a = Console.Read();
-            //AutoStroke test = new AutoStroke(Convert.ToChar(a).ToString());
-
-            //test.keyStroke();
-
-            MessageBox.Show("2");
+            test.KeyStroke();
         }
 
         private void button1_Click(object sender, EventArgs e)

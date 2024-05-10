@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Autoclicker
-build_property.ProjectDir = E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\
+build_property.ProjectDir = C:\Users\ivanc\Documents\Github\Autoclicker\Autoclicker\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
