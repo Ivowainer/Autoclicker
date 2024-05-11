@@ -15,5 +15,6 @@
         private Button startButton;
         private Button stopButton;
         private Button changeHotkeyButton;
+        private Label hotkeyLabel;
     }
 }

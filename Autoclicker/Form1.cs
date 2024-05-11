@@ -2,21 +2,23 @@ using Autoclicker.Utils;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Autoclicker
 {
     public partial class mainForm : Form
     {
-        [DllImport("user32.dll")]
-        public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
 
         private readonly HotkeyConfig hotkeyConfig;
+
+        private char customKey = 'S';  // TODO: Default y la que guarda el usuario
+
         public mainForm()
         {
             InitializeComponent();
 
             this.hotkeyConfig = new HotkeyConfig(this.Handle);
-            this.hotkeyConfig.RegisterByUser('S');
+            this.hotkeyConfig.RegisterByUser(customKey);
         }
 
         protected override void WndProc(ref Message m) // Metodo interno del sistema que escucha por la Hotkey  NO TOCAR!!!!
@@ -27,7 +29,7 @@ namespace Autoclicker
                 int id = m.WParam.ToInt32();
                 if (id == 1)
                 {
-                    Console.WriteLine("La tecla r fue presionada");
+                    Console.WriteLine($"La tecla {customKey} fue presionada");
                 }
             }
             base.WndProc(ref m);
@@ -42,11 +44,12 @@ namespace Autoclicker
             startButton = new Button();
             stopButton = new Button();
             changeHotkeyButton = new Button();
+            hotkeyLabel = new Label();
             SuspendLayout();
             // 
             // startButton
             // 
-            startButton.Location = new Point(620, 321);
+            startButton.Location = new Point(593, 151);
             startButton.Name = "startButton";
             startButton.Size = new Size(190, 73);
             startButton.TabIndex = 0;
@@ -56,7 +59,7 @@ namespace Autoclicker
             // 
             // stopButton
             // 
-            stopButton.Location = new Point(205, 370);
+            stopButton.Location = new Point(397, 151);
             stopButton.Name = "stopButton";
             stopButton.Size = new Size(190, 73);
             stopButton.TabIndex = 1;
@@ -65,17 +68,27 @@ namespace Autoclicker
             // 
             // changeHotkeyButton
             // 
-            changeHotkeyButton.Location = new Point(350, 205);
+            changeHotkeyButton.Location = new Point(121, 199);
             changeHotkeyButton.Name = "changeHotkeyButton";
             changeHotkeyButton.Size = new Size(100, 25);
             changeHotkeyButton.TabIndex = 3;
             changeHotkeyButton.Text = "Change Hotkey";
             changeHotkeyButton.UseVisualStyleBackColor = true;
-            changeHotkeyButton.Click += button1_Click;
+            changeHotkeyButton.Click += changeHotkeyButton_Click;
+            // 
+            // hotkeyLabel
+            // 
+            hotkeyLabel.AutoSize = true;
+            hotkeyLabel.Location = new Point(121, 181);
+            hotkeyLabel.Name = "hotkeyLabel";
+            hotkeyLabel.Size = new Size(12, 15);
+            hotkeyLabel.TabIndex = 4;
+            hotkeyLabel.Text = "Current hotkey: " + customKey;
             // 
             // mainForm
             // 
             ClientSize = new Size(960, 529);
+            Controls.Add(hotkeyLabel);
             Controls.Add(changeHotkeyButton);
             Controls.Add(stopButton);
             Controls.Add(startButton);
@@ -84,6 +97,7 @@ namespace Autoclicker
             Text = "Autoclicker";
             Load += Form1_Load_1;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -103,9 +117,15 @@ namespace Autoclicker
             test.KeyStroke();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void changeHotkeyButton_Click(object sender, EventArgs k)
         {
+            HotkeyWaitForm hotkeyWaitForm = new HotkeyWaitForm();
+            hotkeyWaitForm.ShowDialog();
+            customKey = hotkeyWaitForm.key;
+            MessageBox.Show(customKey.ToString());
+            hotkeyLabel.Text = $"Current hotkey: {customKey}";
 
+            hotkeyConfig.RegisterByUser(customKey);
         }
     }
 }

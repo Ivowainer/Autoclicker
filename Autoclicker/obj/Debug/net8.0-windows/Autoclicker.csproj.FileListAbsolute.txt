@@ -48,3 +48,4 @@ E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\re
 E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.pdb
 E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.genruntimeconfig.cache
 E:\Projects .NET\AutoClicker\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\ref\Autoclicker.dll
+C:\Users\ivanc\Documents\Github\Autoclicker\Autoclicker\obj\Debug\net8.0-windows\Autoclicker.HotkeyWaitForm.resources
